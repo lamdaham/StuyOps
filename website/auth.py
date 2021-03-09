@@ -21,7 +21,7 @@ def sign_up():
 		password2 = request.form.get('password2')
 
 		if len(email) < 4:
-			flash('email is too short', category='error')
+			flash('email is too short')
 		elif len(firstName)<2:
 			flash('firstName is too short', category='error')
 		elif password1 != password2:

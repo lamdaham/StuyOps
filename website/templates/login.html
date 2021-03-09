@@ -1,26 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+{% block content %} 
+<form method="POST">
+	<h3 align="center">Login</h3>
+	<div class="form-group">
+		<label for="email">Email Address</label>
+		<input type="emai;" class="form-control" id="email" name="email" placeholder="Enter email">
+	</div>
+	<div class="form-group">
+		<label for="password">Password</label>
+		<input type="password" class="form-control" id="password" name="password" placeholder="Enter password1">
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
 	
-	<title>Login</title>
+</form>
 
-	<link rel="stylesheet" type = "text/css" href="loginCSS.css">
-	<link rel="stylesheet" type = "text/css" href="navBarStyle.css">
-</head>
-<body>
-<a href="home.html"><img src="https://stuy.enschool.org/pics/STUYHS_MOBILE.gif" alt = "logo" class = "logo" width="150px"></a>
-<header>
-<nav>
-	<ul>
-  <li><a href="home.html">Home</a></li>
-  <li><a href="loginAndSignUpPage.html">Login/SignUp</a></li>
-  <li><a href="oppertunities.html">Oppertunities</a></li>
-  <li><a href="about.html">About</a></li>
-</ul>
-</nav>
-</header>
-
-</body>
-</html>
-</body>
-</html>
+{% endblock %}
