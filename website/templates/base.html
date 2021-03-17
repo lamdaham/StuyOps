@@ -91,11 +91,14 @@ nav a:hover::before {
   {% if user.is_authenticated %}
   <li><a href="/ops">Oppertunities</a></li>
   <li><a href="/logout">Log-out</a></li>
+  {% if user.roles == 'admin' %}
+  <li><a href="/post_ops">Post Ops</a></li>
+  {% endif %}
   {% else %}
   <li><a href="/login">Login</a></li>
   <li><a href="/sign-up">SignUp</a></li>
   {% endif %}
-  <li><a href="about.html">About</a></li>
+  <li><a href="/about">About</a></li>
 </ul>
 </nav>
 

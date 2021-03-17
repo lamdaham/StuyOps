@@ -1,7 +1,10 @@
 from flask import Flask
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from os import path
-from flask_login import LoginManager
+from flask_login import LoginManager, current_user
+from flask_admin import Admin, AdminIndexView
+from flask_admin.contrib.sqla import ModelView
 
 db = SQLAlchemy()
 DB_NAME = "database.db"
@@ -31,6 +34,21 @@ def create_app():
     @login_manager.user_loader
     def load_user(id):
     	return User.query.get(int(id))
+
+    class MyModelView(ModelView):
+        def is_accessible(self):
+            return (current_user.roles == "admin")
+
+        def inaccessible_callback(self, name, *kwargs):
+            return redirect(url_for('views.home'))
+
+    class MyAdminIndexView(AdminIndexView):
+        def is_accessible(self):
+            return (current_user.roles == "admin")
+            
+
+    admin = Admin(app, index_view = MyAdminIndexView())
+    admin.add_view(MyModelView(User, db.session))
 
 
     return app

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %} Post an Opportunity {% endblock %}
+{% block content %}
+<form method="POST">
+	<h3 align="center">Post an Opportunity</h3>
+	<div class="form-group">
+		<label for="title">Title</label>
+		<input type="title" class="form-control" id="title" name="title" placeholder="Enter title">
+	</div>
+	<div class="form-group">
+		<label for="title">Deadline</label>
+		<input type="date" class="form-control" id="deadline" name="deadline">
+	</div>
+{% endblock %}

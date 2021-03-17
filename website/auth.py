@@ -4,10 +4,14 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
 
+
+
 auth = Blueprint('auth', __name__)
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login():
+	if (current_user.is_authenticated):
+		return redirect(url_for('views.home'))
 	if request.method == 'POST':
 		email = request.form.get('email')
 		password = request.form.get('password')
@@ -38,6 +42,7 @@ def sign_up():
 		first_name = request.form.get('firstName')
 		password1 = request.form.get('password1')
 		password2 = request.form.get('password2')
+		roles = request.form.get('roles')
 		user = User.query.filter_by(email=email).first()
 		if user:
 			flash('Email already exist', category='error')
@@ -50,11 +55,26 @@ def sign_up():
 		elif len(password1) < 7:
 			flash('password too short', category='error')
 		else:
-			new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
+			new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'), roles = roles)
 			db.session.add(new_user)
 			db.session.commit()
 			flash('success', category='success')
-			login_user(user, remember=True)
+			login_user(new_user, remember=True)
 			return redirect(url_for('views.home'))
 
 	return render_template("sign_up.html", user = current_user)
+
+
+@auth.route('/post_ops', methods=['GET', 'POST'])
+@login_required
+def post_ops(): 
+	flash(current_user.roles)
+	if request.method == 'POST':
+		title = request.form.get('title')
+		deadline = request.form.get('deadline')		
+		return redirect(url_for('views.home'))
+	return render_template("post_ops.html", user = current_user)
+		
+
+
+
