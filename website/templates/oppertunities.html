@@ -11,12 +11,29 @@
 <TABLE class="center">
 	<tr>
 		<th>Oppertunity</th>
+<<<<<<< HEAD
 		<th>Start Date</th>
 		<th>Deadline</th>
+=======
+		<th>Deadline</th>
+		<th>Info</th>
+
+>>>>>>> 146ac38e3e63b3372ae58c988d841ebeda8215da
 	</tr>
 
+{% for row in fulldata %}
+
+<tr>
+	<td>{{row.title}}</td>
+	<td>{{row.date}}</td>
+	<td>{{row.data}}</td>
+</tr>
+
+{% endfor %}
 
 
 </TABLE>
+
+
 {% endblock %}
 

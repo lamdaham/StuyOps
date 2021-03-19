@@ -7,8 +7,10 @@ from flask_admin.contrib.sqla import ModelView
 
 class Ops(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
+	title = db.Column(db.String(100000000)) 
 	data = db.Column(db.String(100000000))
 	date = db.Column(db.DateTime(timezone = True))
+	url = db.Column(db.String(10000000000))
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
 
@@ -20,13 +22,3 @@ class User(db.Model, UserMixin):
 	first_name = db.Column(db.String(150))
 	roles = db.Column(db.String(150))
 	notes = db.relationship('Ops')
-
-		
-
-
-
-	# """docstring for User"""
-	# def __init__(self, arg):
-	# 	super(User, self).__init__()
-	# 	self.arg = arg
-	# 	

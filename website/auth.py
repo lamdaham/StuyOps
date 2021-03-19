@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
-from .models import User
+from .models import User, Ops
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import db
 from flask_login import login_user, login_required, logout_user, current_user
+from datetime import datetime
 
 
 
@@ -31,7 +32,7 @@ def login():
 
 @auth.route('/logout')
 @login_required
-def logout():
+def logout():  
 	logout_user()
 	return redirect(url_for('auth.login'))
 
@@ -71,8 +72,24 @@ def post_ops():
 	flash(current_user.roles)
 	if request.method == 'POST':
 		title = request.form.get('title')
-		deadline = request.form.get('deadline')		
-		return redirect(url_for('views.home'))
+		deadline = request.form.get('deadline')
+		data = request.form.get('data')
+		url = request.form.get('url')
+		if len(title)<1:
+			flash('Please enter title')
+		elif len(deadline)<1:
+			flash('Please enter deadline')
+		elif len(data)<1:
+			flash('Please enter information')
+		elif len(url)<1:
+			flash('Please enter url')
+		else:
+			date = datetime(int(deadline[0:4]), int(deadline[5:7]), int(deadline[8:]), 23, 59, 59)
+			new_op = Ops(title=title, date = date, data = data, url = url)
+			db.session.add(new_op)
+			db.session.commit()
+			flash('success')
+			return redirect(url_for('views.home'))
 	return render_template("post_ops.html", user = current_user)
 		
 
