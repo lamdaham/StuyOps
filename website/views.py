@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template
 from flask_login import login_required, current_user
+from .models import Ops
+
 
 views = Blueprint('views', __name__)
 
@@ -14,4 +16,4 @@ def about():
 @views.route('/ops')
 @login_required
 def ops():
-	return render_template("oppertunities.html", user=current_user)
+	return render_template("oppertunities.html", user=current_user, fulldata=Ops.query.all())
