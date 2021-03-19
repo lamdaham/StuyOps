@@ -95,6 +95,79 @@ th, td {
 th {
   text-align: center;
 }
+.search-bar{
+  width: 250px;
+  float: right;
+
+
+}
+input[type=search] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 2px 5px;
+}
+input[type=search]:hover {
+  color: #000;
+}
+
+input[type=search]::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+input[type=search]:hover::before {
+  width: 100%;
+}
+input[type=email] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 2px 5px;
+}
+
+input[type=firstName] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 2px 5px;
+}
+
+input[type=password1] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 2px 5px;
+}
+
+input[type=password2] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 2px 5px;
+}
+
+input[type=roles] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 2px 5px;
+}
+
+input[type=password] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    padding: 2px 5px;
+} 
 </style>
 <title> {% block title %} Home {% endblock %} </title>
 </head>
