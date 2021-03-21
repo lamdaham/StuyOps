@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block title %} Oppertunities {% endblock %}
 {% block content %}
-<form action="" class="search-bar" 	>
-	<input type="search" name="search" placeholder="Search For Oppertunities" style="height:35px;">
-	<button class="search-btn" type="submit">
-		<span><img src="https://cdn.onlinewebfonts.com/svg/img_388871.png" style="height:25px;"></span>
-	</button>
-</form>
+<div>
+	<form action="" class="search-bar" method="GET">
+		<input type="search" name="search" placeholder="Search For Oppertunities" style="height:35px;">
+		<button class="search-btn" type="submit">
+			<span><img src="https://cdn.onlinewebfonts.com/svg/img_388871.png" style="height:25px;"></span>
+		</button>
+	</form>
+</div>
 <p><br></p>
 <TABLE class="center">
 	<tr>
@@ -18,7 +20,7 @@
 {% for row in fulldata %}
 
 <tr>
-	<td>{{row.title}}</td>
+	<td><a href="{{ url_for('views.op', oppertunities = row.id) }}">{{row.title}}</a></td>
 	<td>{{row.date}}</td>
 	<td>{{row.data}}</td>
 </tr>
