@@ -210,6 +210,7 @@ input[type=password] {
   <li><a href="/">Home</a></li>
   {% if user.is_authenticated %}
   <li><a href="/ops">Oppertunities</a></li>
+  <li><a href="/profile">Profile</a></li>
   <li><a href="/logout">Log-out</a></li>
   {% if user.roles == 'admin' %}
   <li><a href="/post_ops">Post Ops</a></li>

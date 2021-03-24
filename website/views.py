@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Ops
+from .models import Ops, assignee
+from . import db
 
 
 views = Blueprint('views', __name__)
@@ -23,9 +24,21 @@ def ops():
 		posts = Ops.query.all()
 	return render_template("oppertunities.html", user=current_user, fulldata=posts)
 
-@views.route('/op/<oppertunities>')
+@views.route('/op/<oppertunities>', methods=['GET', 'POST'])
 @login_required  
 def op(oppertunities):
-	print("k") 
-	allOps = Ops.query.filter_by(id = oppertunities).first_or_404()
+	print(current_user.savedOps)
+	allOps = Ops.query.filter_by(ops_id = oppertunities).first_or_404()
+	if request.method == 'POST':
+		newop = Ops.query.filter_by(ops_id=oppertunities).first()
+		current_user.savedOps.append(newop)
+		db.session.commit()
+		flash("success")
+		return render_template("ops.html", user = current_user, oppertunities = allOps)		
 	return render_template("ops.html", user = current_user, oppertunities = allOps)
+
+
+@views.route('/profile')
+@login_required
+def profile():
+	return render_template("profile.html", user = current_user)
