@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %} Oppertunities {% endblock %}
+{% block title %} Saved Oppertunities {% endblock %}
 {% block content %}
 <div>
 	<form action="" class="search-bar" method="GET">
@@ -17,7 +17,7 @@
 		<th>Info</th>
 	</tr>
 
-{% for row in fulldata %}
+{% for row in user.savedOps %}
 
 <tr>
 	<td><a href="{{ url_for('views.op', oppertunities = row.ops_id) }}">{{row.title}}</a></td>
@@ -32,4 +32,3 @@
 
 
 {% endblock %}
-

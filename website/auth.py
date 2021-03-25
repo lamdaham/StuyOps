@@ -91,7 +91,7 @@ def post_ops():
 			flash('success')
 			return redirect(url_for('views.home'))
 	return render_template("post_ops.html", user = current_user)
-		
+
 
 
 
