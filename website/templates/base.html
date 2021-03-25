@@ -108,9 +108,10 @@ input[type=search] {
     padding: 2px 5px;
     outline: none;
     border-radius: 10px;
-}
-input[type=search]:hover {
-  color: #000;
+    position:  absolute;
+    top:       100px;  /* I usually locate relative to top  */
+    left:      1275px; /* left corner of container (screen) */
+    height:    80px;  /*  often useful to keep screen orderly */
 }
 
 input[type=search]::before {
