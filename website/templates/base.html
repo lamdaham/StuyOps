@@ -109,10 +109,10 @@ input[type=search] {
     outline: none;
     border-radius: 10px;
     position:  absolute;
-    top:       100px;  /* I usually locate relative to top  */
-    left:      1275px; /* left corner of container (screen) */
-    height:    80px;  /*  often useful to keep screen orderly */
-}
+    top:       100px; 
+    left:      1275px; 
+    height:    80px;  
+}f
 
 input[type=search]::before {
   content: '';
@@ -211,7 +211,6 @@ input[type=password] {
   <li><a href="/">Home</a></li>
   {% if user.is_authenticated %}
   <li><a href="/ops">Oppertunities</a></li>
-  <li><a href="/profile">Profile</a></li>
   <li><a href="/logout">Log-out</a></li>
   {% if user.roles == 'admin' %}
   <li><a href="/post_ops">Post Ops</a></li>
