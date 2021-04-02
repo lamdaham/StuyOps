@@ -15,6 +15,7 @@
 		<th>Oppertunity</th>
 		<th>Deadline</th>
 		<th>Info</th>
+		<th>Delete</th>
 	</tr>
 
 {% for row in user.savedOps %}
@@ -23,6 +24,11 @@
 	<td><a href="{{ url_for('views.op', oppertunities = row.ops_id) }}">{{row.title}}</a></td>
 	<td>{{row.date}}</td>
 	<td>{{row.data}}</td>
+	<td>
+		<form method="POST">
+    	<button type=“button”><a href="{{ url_for('views.deleteOp', oppertunities = row.ops_id) }}">Delete</a></button>
+		</form>
+	</td>
 </tr>
 
 {% endfor %}

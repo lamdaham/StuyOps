@@ -31,6 +31,10 @@ def op(oppertunities):
 	allOps = Ops.query.filter_by(ops_id = oppertunities).first_or_404()
 	if request.method == 'POST':
 		newop = Ops.query.filter_by(ops_id=oppertunities).first()
+		for x in current_user.savedOps:
+			if x == newop:
+				flash("op already added")
+				return render_template("ops.html", user = current_user, oppertunities = allOps)		
 		current_user.savedOps.append(newop)
 		db.session.commit()
 		flash("success")
@@ -41,4 +45,15 @@ def op(oppertunities):
 @views.route('/profile')
 @login_required
 def profile():
+	return render_template("profile.html", user = current_user)
+
+
+@views.route('/deleteOp/<oppertunities>', methods=['GET','POST'])
+@login_required
+def deleteOp(oppertunities):
+	print(current_user.savedOps)
+	thisOp = Ops.query.filter_by(ops_id = oppertunities).first()
+	current_user.savedOps.remove(thisOp)
+	db.session.commit()
+	flash("success")
 	return render_template("profile.html", user = current_user)
