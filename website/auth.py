@@ -119,7 +119,7 @@ def authorize():
     	session['user'] = userlist.id
     	session['roles'] = userlist.roles
     else:
-    	new_user = User(googleID=user_info.get("id"), email=user_info.get("email"), password = user_info.get("id"),first_name=user_info.get("given_name"), roles = "student")
+    	new_user = User(googleID=user_info.get("id"), email=user_info.get("email"), password = enerate_password_hash(user_info.get("id"), method='sha256'),first_name=user_info.get("given_name"), roles = "student")
     	db.session.add(new_user)
     	db.session.commit()
     	session['user'] = new_user.id
