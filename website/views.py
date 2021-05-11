@@ -64,6 +64,6 @@ def deleteOp(oppertunities):
 		userData.savedOps.remove(thisOp)
 		db.session.commit()
 		flash("success")
-		return render_template("profile.html", user = session.get("user", None), roles = session.get('roles', None), oppertunities = allOps)
+		return render_template("profile.html", user = session.get("user", None), roles = session.get('roles', None), userData = userData)
 	return redirect(url_for("views.home", user = session.get("user", None), roles = session.get('roles', None)))
 
