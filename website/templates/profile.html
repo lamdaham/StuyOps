@@ -18,7 +18,7 @@
 		<th>Delete</th>
 	</tr>
 
-{% for row in user.savedOps %}
+{% for row in userData.savedOps %}
 
 <tr>
 	<td><a href="{{ url_for('views.op', oppertunities = row.ops_id) }}">{{row.title}}</a></td>

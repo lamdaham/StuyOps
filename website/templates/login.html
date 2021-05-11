@@ -13,8 +13,11 @@
 		<input type="password" class="form-control" id="password" name="password" placeholder="Enter password1" style="height:25px;" required>
 		<br><br>
 	<button type="submit" class="btn btn-primary">Submit</button>
-	
+	<br>
+	<a href="{{ url_for('auth.glogin')}}">
+		<img src="{{url_for('static', filename='normal.png')}}" align="middle"/>
+	</a>
+
 </form>
 
 {% endblock %}
-sa

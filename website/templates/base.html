@@ -228,11 +228,11 @@ text-decoration: underline;
 <nav>
 	<ul>
   <li><a href="/">Home</a></li>
-  {% if user.is_authenticated %}
+  {% if user != None %}
   <li><a href="/ops">Oppertunities</a></li>
   <li><a href="/logout">Log-out</a></li>
   <li><a href="/profile">Profile</a></li>
-  {% if user.roles == 'admin' %}
+  {% if roles == 'admin' %}
   <li><a href="/post_ops">Post Ops</a></li>
   {% endif %}
   {% else %}
