@@ -5,18 +5,18 @@
 	<h3 align="center">Login</h3>
 	<div class="form-group">
 		<label for="email">Email Address</label>
-		<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" style="height:25px;" required>
+		<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" style="height:25px;" required autocomplete="off">
 	</div>
 	<p><br></p>
 	<div class="form-group">
 		<label for="password">Password</label>
 		<input type="password" class="form-control" id="password" name="password" placeholder="Enter password1" style="height:25px;" required>
-		<br><br>
-	<button type="submit" class="btn btn-primary">Submit</button>
-	<br>
-	<a href="{{ url_for('auth.glogin')}}">
+		<br><br><a href="{{ url_for('auth.glogin')}}">
 		<img src="{{url_for('static', filename='normal.png')}}" align="middle"/>
-	</a>
+	</a><br><br>
+	<button type="submit" class="btn_btn-primary">Submit</button>
+	<br>
+	
 
 </form>
 
