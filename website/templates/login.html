@@ -4,12 +4,12 @@
 <form method="POST">
 	<h3 align="center">Login</h3>
 	<div class="form-group">
-		<label for="email">Email Address</label>
+		<label for="email">Email Address:</label>
 		<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" style="height:25px;" required autocomplete="off">
 	</div>
 	<p><br></p>
 	<div class="form-group">
-		<label for="password">Password</label>
+		<label for="password">Password:</label>
 		<input type="password" class="form-control" id="password" name="password" placeholder="Enter password1" style="height:25px;" required>
 		<br><br><a href="{{ url_for('auth.glogin')}}">
 		<img src="{{url_for('static', filename='normal.png')}}" align="middle"/>
