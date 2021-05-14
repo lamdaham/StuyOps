@@ -134,7 +134,7 @@ input[type=search]:hover::before {
 input[type=email] {
 
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -142,7 +142,7 @@ input[type=email] {
 
 input[type=firstName] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -150,7 +150,7 @@ input[type=firstName] {
 
 input[type=password1] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -158,7 +158,7 @@ input[type=password1] {
 
 input[type=password2] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -166,7 +166,7 @@ input[type=password2] {
 
 input[type=roles] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -175,14 +175,14 @@ input[type=roles] {
 
 input[type=password] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
 }
 input[type=password] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -207,16 +207,70 @@ width: 100%;
 text-decoration: underline;
 }
 
+::-webkit-input-placeholder{
+    color:#57daca;
+    background-color: #F0F8FF;
+    transition:color 0.53s ease-in-out;
+
+}
+:focus::-webkit-input-placeholder{
+    color: orange;
+}
 .btn_btn-primary {
-    background: #39b7dd;
-    text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    font-size: 25px
-    }
+  background-color: var(--background-color);
+  color: #222;
+  padding: .5em 1em;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+
+  --background-color: #E3E3E3;
+  --border-size: 2px;
+  --accent-color: #0AF;
+  width: 100px;
+  height: 55px;
+  font-size: 20px;
+}
+
+
+
+
+.btn_btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--accent-color);
+
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.btn_btn-primary:hover::before,
+.btn_btn-primary:focus::before {
+  transform: scaleX(1);
+}
+
+.btn_btn-primary {
+  transition: color 300ms ease-in-out;
+  z-index: 1;
+}
+
+
+.btn_btn-primary:hover,
+.btn_btn-primary:focus {
+  color: white;
+}
+
+
+
+
+
 
 
 </style>
