@@ -186,6 +186,21 @@ input[type=password] {
     font-size: 20px;
     outline: none;
 } 
+.form-control{
+    border: none;
+    padding: 2px 5px;
+    font-size: 20px;
+    outline: none;
+    border-bottom: 3px solid #000000;
+}
+text-area{
+  border: none;
+    padding: 2px 5px;
+    font-size: 20px;
+    outline: none;
+    border-bottom: 3px solid #000000;
+
+}
 table a{
    text-decoration:none;
   color: black;
@@ -265,11 +280,68 @@ text-decoration: underline;
   color: white;
 }
 
+table a {
+  background-color: var(--background-color);
+  color: #222;
+  padding: .5em 1em;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+
+  --background-color: #E3E3E3;
+  --border-size: 2px;
+  --accent-color: #0AF;
+  width: 100px;
+  height: 55px;
+  font-size: 20px;
+}
 
 
 
 
+table a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--accent-color);
 
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+table a:hover::before,
+table a:focus::before {
+  transform: scaleX(1);
+}
+
+table a {
+  transition: background-color 300ms ease-in-out;
+  z-index: 1;
+}
+
+
+table a:hover,
+table a:focus {
+  background-color: #87CEFA;
+}
+
+
+
+
+.search{
+  border: none;
+    padding: 2px 5px;
+    font-size: 20px;
+    outline: none;
+    border-bottom: 3px solid #000000;
+
+}
 
 </style>
 <title> {% block title %} Home {% endblock %} </title>
