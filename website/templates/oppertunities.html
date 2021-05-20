@@ -21,8 +21,8 @@
 
 <tr>
 	<td><a href="{{ url_for('views.op', oppertunities = row.ops_id) }}">{{row.title}}</a></td>
-	<td>{{row.date}}</td>
-	<td>{{row.data}}</td>
+	<td class= "data">{{row.date}}</td>
+	<td class= "data">{{row.data}}</td>
 </tr>
 
 {% endfor %}

@@ -93,9 +93,10 @@ th, td {
 }
 th {
   text-align: center;
+  background-color: #DDD;
 }
 .search-bar{
-  width: 250px;
+  width: 300px;
   float: right;
 
 
@@ -103,10 +104,10 @@ th {
 input[type=search] {
     border: none;
     border-bottom: 3px solid #000000;
-    
+    width: 170px;
     top:       10%; 
     left:      70%;
-}f
+}
 
 input[type=email] {
 
@@ -266,15 +267,16 @@ table a {
   outline: none;
   position: relative;
   cursor: pointer;
-
-  --background-color: #E3E3E3;
-  --border-size: 2px;
-  --accent-color: #0AF;
   width: 100px;
   height: 55px;
   font-size: 20px;
 }
+table{
+  border-radius: 15px;
+}
 
+
+ 
 
 
 
@@ -289,8 +291,6 @@ table a::before {
   background-color: var(--accent-color);
 
   transition: transform 300ms ease-in-out;
-  transform: scaleX(0);
-  transform-origin: left;
 }
 
 table a:hover::before,
@@ -310,8 +310,13 @@ table a:focus {
 }
 
 
-
-
+td {
+  text-align: center;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
 .search{
   border: none;
     padding: 2px 5px;
@@ -320,7 +325,33 @@ table a:focus {
     border-bottom: 3px solid #000000;
 
 }
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
 
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  height: 50px;
+  font-size: 20px;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+
+}
+table td button{
+  width: 78%;
+}
 </style>
 <title> {% block title %} Home {% endblock %} </title>
 </head>
