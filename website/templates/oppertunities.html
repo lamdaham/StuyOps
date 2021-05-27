@@ -12,17 +12,18 @@
 <p><br></p>
 <TABLE class="center">
 	<tr>
-		<th>Oppertunity</th>
-		<th>Deadline</th>
+		<th class="asdff">Oppertunity</th>
+		<th class="asdf">Deadline</th>
 		<th>Info</th>
 	</tr>
 
 {% for row in fulldata %}
 
 <tr>
-	<td><a href="{{ url_for('views.op', oppertunities = row.ops_id) }}">{{row.title}}</a></td>
-	<td class= "data">{{row.date}}</td>
-	<td class= "data">{{row.data}}</td>
+	<td class="asdff">
+	<a href="{{ url_for('views.op', oppertunities = row.ops_id) }}">{{row.title}}</a></td>
+	<td class="asdf">{{row.date}}</td>
+	<td>{{row.data}}</td>
 </tr>
 
 {% endfor %}

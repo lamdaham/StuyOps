@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block title %} Opertunity {% endblock %}
+{% block title %} Oppertunity {% endblock %}
 {% block content %} 
 
 <h1> {{oppertunities.title}} </h1>
 <h1> {{oppertunities.date}} </h1>
 <h1> {{oppertunities.data}} </h1>
-<h1> {{oppertunities.url}} </h1>
+<h1> <a href={{oppertunities.url}}>{{oppertunities.url}}</a></h1>
 <form method="POST">
     <button type="submit" class="btn_btn-primary">Add me!</button>
 </form>
