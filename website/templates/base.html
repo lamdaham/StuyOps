@@ -271,20 +271,23 @@ table a {
   outline: none;
   position: relative;
   cursor: pointer;
-  width: 100px;
-  height: 55px;
   font-size: 20px;
 }
 table{
   border-radius: 15px;
 }
 
+.hi {
+  color: #222;
+  padding: .5em 1em;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
 
- 
-
-
-
-table a::before {
+.hi::before {
   content: '';
   position: absolute;
   top: 0;
@@ -297,20 +300,47 @@ table a::before {
   transition: transform 300ms ease-in-out;
 }
 
+.hi:hover::before,
+.hi:focus::before {
+  transform: scaleX(1);
+}
+
+.hi {
+  transition: background-color 300ms ease-in-out;
+  z-index: 1;
+}
+
+
+.hi:hover,
+.hi:focus {
+  background-color: #87CEFA;
+}
+
+table a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--accent-color);
+
+  transition: transform 300ms ease-in-out;
+}
+
 table a:hover::before,
 table a:focus::before {
   transform: scaleX(1);
 }
 
 table a {
-  transition: background-color 300ms ease-in-out;
-  z-index: 1;
+  transition: color 300ms ease-in-out;
 }
 
 
 table a:hover,
 table a:focus {
-  background-color: #87CEFA;
+  color: #FF8000;
 }
 
 .search{
