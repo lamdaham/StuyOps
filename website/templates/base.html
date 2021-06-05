@@ -295,8 +295,8 @@ table{
   bottom: 0;
   right: 0;
   z-index: -1;
-  background-color: var(--accent-color);
-
+    background-color: var(--accent-color);
+    
   transition: transform 300ms ease-in-out;
 }
 
@@ -478,7 +478,19 @@ table tr a{
 /* On smaller screens, decrease text size */
 @media only screen and (max-width: 300px) {
   .prev, .next,.text {font-size: 11px}
-}</style>
+}
+
+.hi {
+  color: #222;
+  padding: .5em 1em;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+</style>
 
 <title> {% block title %} Home {% endblock %} </title>
 </head>
