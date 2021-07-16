@@ -5,7 +5,6 @@
 	<style>
 body {
 	margin: 0;
-	background:  #F0F8FF;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 800;
 }
@@ -14,7 +13,6 @@ body {
 	width: 80%;
 	margin: 0 auto;
 }
-
 header {
   background:   #87CEFA;
 }
@@ -94,47 +92,26 @@ th, td {
 }
 th {
   text-align: center;
+  background-color: #DDD;
 }
 .search-bar{
-  width: 250px;
+  width: 300px;
   float: right;
 
 
 }
 input[type=search] {
-    background:   #D3D3D3;
     border: none;
-    border-bottom: 1px solid #000000;
-    padding: 2px 5px;
-    outline: none;
-    border-radius: 10px;
-    position:  absolute;
-    top:       100px; 
-    left:      1275px; 
-    height:    80px;  
-}f
-
-input[type=search]::before {
-  content: '';
-  display: block;
-  height: 5px;
-  background-color: #444;
-
-  position: absolute;
-  top: 0;
-  width: 0%;
-
-  transition: all ease-in-out 250ms;
+    border-bottom: 3px solid #000000;
+    width: 170px;
+    top:       10%; 
+    left:      70%;
 }
 
-input[type=search]:hover::before {
-  width: 100%;
-  font-size: 20px;
-}
 input[type=email] {
 
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -142,7 +119,7 @@ input[type=email] {
 
 input[type=firstName] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -150,7 +127,7 @@ input[type=firstName] {
 
 input[type=password1] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -158,7 +135,7 @@ input[type=password1] {
 
 input[type=password2] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -166,7 +143,7 @@ input[type=password2] {
 
 input[type=roles] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
@@ -175,18 +152,38 @@ input[type=roles] {
 
 input[type=password] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
 }
 input[type=password] {
     border: none;
-    border-bottom: 1px solid #000000;
+    border-bottom: 3px solid #000000;
     padding: 2px 5px;
     font-size: 20px;
     outline: none;
 } 
+.form-control{
+    border: none;
+    padding: 2px 5px;
+    font-size: 20px;
+    outline: none;
+    border-bottom: 3px solid #000000;
+}
+text-area{
+  border: none;
+    padding: 2px 5px;
+    font-size: 20px;
+    outline: none;
+    border-bottom: 3px solid #000000;
+
+}a{
+  text-decoration: none;
+
+
+
+}
 table a{
    text-decoration:none;
   color: black;
@@ -208,6 +205,7 @@ text-decoration: underline;
 }
 
 
+
 .googleLogin {
     background-image: url("{{url_for('static', filename='normal.png')}}");
     height: xx;
@@ -216,22 +214,298 @@ text-decoration: underline;
 
 .googleLogin:hover {
     background-image: url("{{url_for('static', filename='btn_google_signin_dark_focus_web@2x.png')}}");
+  }
+
+::-webkit-input-placeholder{
+    color:#57daca;
+    transition:color 0.53s ease-in-out;
+
+}
+:focus::-webkit-input-placeholder{
+    color: orange;
+}
+.btn_btn-primary {
+  background-color: var(--background-color);
+  color: #222;
+  padding: .5em 1em;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+
+  --background-color: #E3E3E3;
+  --border-size: 2px;
+  --accent-color: #0AF;
+  width: 100px;
+  height: 55px;
+  font-size: 20px;
+}
+
+
+
+
+.btn_btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-color: var(--accent-color);
+
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.btn_btn-primary:hover::before,
+.btn_btn-primary:focus::before {
+  transform: scaleX(1);
+>>>>>>> 2add3f25bb4284c680304ce213212f1bcd82e693
 }
 
 .btn_btn-primary {
-    background: #39b7dd;
-    text-align: center;
-    padding: 15px;
-    border-radius: 5px;
-    color: #fff;
-    cursor: pointer;
-    outline: none;
-    font-size: 25px
-    }
+  transition: color 300ms ease-in-out;
+  z-index: 1;
+}
 
+
+.btn_btn-primary:hover,
+.btn_btn-primary:focus {
+  color: white;
+}
+
+table a {
+  background-color: var(--background-color);
+  color: #222;
+  padding: .5em 1em;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
+table{
+  border-radius: 15px;
+}
+
+.hi {
+  color: #222;
+  padding: .5em 1em;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.hi::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+    background-color: var(--accent-color);
+    
+  transition: transform 300ms ease-in-out;
+}
+
+.hi:hover::before,
+.hi:focus::before {
+  transform: scaleX(1);
+}
+
+.hi {
+  transition: background-color 300ms ease-in-out;
+  z-index: 1;
+}
+
+
+.hi:hover,
+.hi:focus {
+  background-color: #87CEFA;
+}
+
+table a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: var(--accent-color);
+
+  transition: transform 300ms ease-in-out;
+}
+
+table a:hover::before,
+table a:focus::before {
+  transform: scaleX(1);
+}
+
+table a {
+  transition: color 300ms ease-in-out;
+}
+
+
+table a:hover,
+table a:focus {
+  color: #FF8000;
+}
+
+.search{
+  border: none;
+    padding: 2px 5px;
+    font-size: 20px;
+    outline: none;
+    border-bottom: 3px solid #000000;
+
+}
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table td, table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  height: 50px;
+  font-size: 20px;
+  max-width: 100px;
+  word-break:  break-word;
+}
+
+table tr:nth-child(even){background-color: #f2f2f2;}
+
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+
+}
+table tr a{
+  max-height: 50px;
+}
+.asdf{
+  width: 15%;
+}
+.asdff{
+  width: 25%;
+
+}
+.mySlides {display: none}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  max-height: 500px;
+  position: relative;
+    right: 0%;  
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  position: relative;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  right: 34%;
+}
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+.hi {
+  color: #222;
+  padding: .5em 1em;
+  border: none;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
 
 
 </style>
+
 <title> {% block title %} Home {% endblock %} </title>
 </head>
 <body>
